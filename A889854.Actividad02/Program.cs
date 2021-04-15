@@ -40,13 +40,13 @@ namespace A889854.Actividad02
 
             alumnos.Sort((y, x) => x.getRanking.CompareTo(y.getRanking));
 
-            // Si hay cursos disponibles inscribe al alumno, luego ordena la lista de cursos para que queden al principio los de mas capacidad libre.
+            // Si hay cursos disponibles inscribe al alumno, luego ordena la lista de cursos para que queden al principio los que tienen menos alumnos inscriptos.
             foreach (Alumno alumno in alumnos)
             {
                 if (cursos.Any(c => c.getCapacidad > 0))
                 {
                     alumno.inscripto = true;
-                    cursos.Sort((y, x) => x.getCapacidad.CompareTo(y.getCapacidad));
+                    cursos.Sort((x, y) => x.getInscriptos.CompareTo(y.getInscriptos));
                     cursos[0].inscribiralumno();
                 }
             }
