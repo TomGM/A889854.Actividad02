@@ -8,7 +8,7 @@ namespace A889854.Actividad02
 {
     static class Validaciones
     {
-       
+
         // Valida enteros.
         public static int ingresarEntero()
         {
@@ -31,14 +31,13 @@ namespace A889854.Actividad02
         // Valida si el usuario tipea 's' o 'n'.
         public static char siono(char respuesta)
         {
-            char siono = respuesta;
-            while (siono != 's' && siono != 'n')
+            while (respuesta != 's' && respuesta != 'n')
             {
                 Console.WriteLine("Ingrese una opción válida.\n");
                 respuesta = Console.ReadKey().KeyChar;
                 Console.Clear();
             }
-            return siono;
+            return respuesta;
 
         }
 
